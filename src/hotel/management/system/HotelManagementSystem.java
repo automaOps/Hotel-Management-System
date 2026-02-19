@@ -34,6 +34,8 @@ public class HotelManagementSystem extends JFrame implements ActionListener {
         
         setVisible(true);
         
+        long startTime = System.currentTimeMillis();
+        boolean exitLoop = false;
         while(true){
             txt1.setVisible(false);
             try{
@@ -46,6 +48,10 @@ public class HotelManagementSystem extends JFrame implements ActionListener {
                 Thread.sleep(500);
             } catch (Exception e){
                 e.printStackTrace();
+            }
+            exitLoop = (System.currentTimeMillis() - startTime) >= 5000;
+            if(exitLoop){
+                break;
             }
         }
     }
